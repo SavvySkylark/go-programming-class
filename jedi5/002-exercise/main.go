@@ -8,44 +8,36 @@ type person struct {
 	favoriteIcecreamFlavors []string
 }
 
-type vehicle struct {
-	doors int
-	color string
-}
-
-type truck struct {
-	vehicle
-	fourWheel bool
-}
-
-type sedan struct {
-	vehicle
-	luxury bool
-}
-
 func main() {
-
-	t := truck{
-		vehicle: vehicle{
-			doors: 4,
-			color: "green",
+	p := person{
+		firstName: "Skylar",
+		lastName:  "Smith",
+		favoriteIcecreamFlavors: []string{
+			"Chocolate",
+			"Vanillia",
+			"Strawberry",
 		},
-		fourWheel: true,
 	}
 
-	s := sedan{
-		vehicle: vehicle{
-			doors: 2,
-			color: "red",
+	p2 := person{
+		firstName: "Greyson",
+		lastName:  "Smith2",
+		favoriteIcecreamFlavors: []string{
+			"Chocolate",
+			"Vanillia",
+			"Strawberry",
 		},
-		luxury: true,
+	}
+	m := map[string]person{
+		p.lastName:  p,
+		p2.lastName: p2,
 	}
 
-	fmt.Println(t.doors)
-	fmt.Println(t.color)
-	fmt.Println(t.fourWheel)
-
-	fmt.Println(s.color)
-	fmt.Println(s.doors)
-	fmt.Println(s.luxury)
+	for _, person := range m {
+		fmt.Println(person.firstName)
+		fmt.Println(person.lastName)
+		for _, flavor := range person.favoriteIcecreamFlavors {
+			fmt.Println(flavor)
+		}
+	}
 }
