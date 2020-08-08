@@ -9,7 +9,7 @@ func main() {
 		"no_dr":           []string{`no_dr`, `Being evil`, `Ice cream`, `Sunsets`},
 	}
 
-	m["some_guy"] = []string{"okay", "sure", "fine"}
+	delete(m, "no_dr")
 
 	for _, p := range m {
 		for i, phrase := range p {
