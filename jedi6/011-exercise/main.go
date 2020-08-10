@@ -12,9 +12,9 @@ func factorial(f int, acc int) int {
 
 	if f <= 0 {
 		return acc
-	} else {
-		acc *= f
-		f--
-		return factorial(f, acc)
 	}
+	acc *= f
+	f--
+	return factorial(f, acc)
+
 }
